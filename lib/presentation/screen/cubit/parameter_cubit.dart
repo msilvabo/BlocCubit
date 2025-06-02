@@ -5,6 +5,9 @@ class ParameterCubit extends Cubit<ParameterState> {
   ParameterCubit(super.initialState);
 
   void addData(String server, String api) {
+    if (server.isEmpty || api.isEmpty) {
+      return;
+    }
     emit(state.copyWith(server: server, api: api));
   }
 }
