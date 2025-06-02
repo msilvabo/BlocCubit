@@ -1,13 +1,12 @@
-import 'package:bloc_app/presentation/screen/cubit/parameter_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
+import 'package:bloc_app/presentation/screen/cubit/parameter_state.dart';
 
+@injectable
 class ParameterCubit extends Cubit<ParameterState> {
-  ParameterCubit(super.initialState);
+  ParameterCubit() : super(ParameterState());
 
-  void addData(String server, String api) {
-    if (server.isEmpty || api.isEmpty) {
-      return;
-    }
+  void updateParameters(String server, String api) {
     emit(state.copyWith(server: server, api: api));
   }
 }

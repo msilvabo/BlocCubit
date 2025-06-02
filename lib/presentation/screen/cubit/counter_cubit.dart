@@ -3,7 +3,7 @@ import 'package:bloc_app/presentation/domain/repository/poke_repository.dart';
 import 'package:bloc_app/presentation/screen/cubit/counter_state.dart';
 
 class CounterCubit extends Cubit<CounterState> {
-  CounterCubit({required PokeRepository pokeRepository}): _pokeRepository = pokeRepository , super(CounterState());
+  CounterCubit(this.pokeRepository) : super(CounterInitial());
 
   final PokeRepository _pokeRepository;
 
